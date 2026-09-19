@@ -55,20 +55,21 @@ const Login = () => {
 
       console.log(res);
 
-      if(res?.ok ){
-          toast.add({
-           type:"success",
-           description:"login success"
-          })
-          router.replace(res?.url || "/");
-      }
+      if (res?.ok) {
+  toast.add({
+    type: "success",
+    description: "login success",
+  });
 
-      else{
-          toast.add({
-            type: "error",
-            description: res?.error|| "Something went wrong",
-          });
-      }
+  router.replace("/");
+  router.refresh();
+} else {
+  toast.add({
+    type: "error",
+    description: res?.error || "Something went wrong",
+  });
+}
+
 
 
     }
