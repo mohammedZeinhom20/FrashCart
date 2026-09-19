@@ -1,0 +1,5 @@
+export default async function getAllSupCategory() {
+    const response = await fetch(`https://ecommerce.routemisr.com/api/v1/reviews`)
+    const {data} = await response.json()
+    return data
+}
